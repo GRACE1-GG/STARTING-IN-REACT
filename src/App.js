@@ -5,6 +5,7 @@ import Dashboard from './Components/Dashboard';
 import Reports from './Components/Reports';
 import ForgotPassword from './Components/ForgotPassword';
 import SignUp from './Components/SignUp';
+import Navbar from './Components/Navbar';
 import LandingPage from './Components/LandingPage/LandingPage.js'; // Import the LandingPage component
 
 import {
@@ -17,17 +18,19 @@ import {
   //import { Route, Switch } from "react-router";
 
   
-  function App() {
+  function App() {          
     return (
       <Router>
+        <Navbar />
       <Routes>test",
+      <Route path="/" element={<LandingPage />} /> {/* Add the LandingPage component here */}
       <Route  path="/login" element={<Login />} />
       <Route path="/users" element={<Dashboard />} />
       <Route path="/reports" element={<Reports />} />
-      <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/signup-link" element={<SignUp />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/" element={<LandingPage />} /> {/* Add the LandingPage component here */}
+      
 
     </Routes>      
                 

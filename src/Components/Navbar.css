@@ -4,8 +4,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 15px;
     background-color: rgba(0, 0, 0, 0.8);
+    background-size: cover;
     color: #fff;
     position: fixed;  /* Stick to the top of the page */
     top: 0;
@@ -15,6 +16,7 @@
   .navbar-logo {
     font-size: 24px;
     font-weight: bold;
+    
   }
   
   .navbar-links {
@@ -35,4 +37,6 @@
   .nav-link:hover {
     color: #4CAF50;
   }
+
+ 
   

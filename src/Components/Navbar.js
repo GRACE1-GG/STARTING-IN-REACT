@@ -5,7 +5,9 @@ import './Navbar.css'; // Import the CSS file
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">MyApp</div>
+      <div className="navbar-logo">
+        <Link to="/">MyApp</Link>
+        </div>
       <div className="navbar-links">
        {/* <Link to="/register" className="nav-link">Register</Link>*/}
        <Link to="/login" className="nav-link">Login</Link>
