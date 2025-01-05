@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [location, setLocation] = useState({ latitude: null, longitude: null });
@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [clockOutTime, setClockOutTime] = useState(null);
   const [totalHours, setTotalHours] = useState("00:00");
   const [currentTime, setCurrentTime] = useState(new Date());
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   // Update time every second
   useEffect(() => {
@@ -65,7 +65,7 @@ const Dashboard = () => {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <ToastContainer />
-      
+      <h1>Home</h1>
       <h3 style={{ color: "green" }}>Welcome, John Doe</h3>
 
       {/* Current Date, Time, and Day */}
@@ -116,7 +116,7 @@ const Dashboard = () => {
 
       <button
         style={{
-          backgroundColor: "red",
+          backgroundColor: "green",
           color: "#fff",
           border: "none",
           borderRadius: "20px",
@@ -143,14 +143,7 @@ const Dashboard = () => {
           padding: "10px 0",
         }}
       >
-        <button onClick={() => navigate("/home")} style={{ background: "none", border: "none", cursor: "pointer" }}>
-          <img src="home-icon.png" alt="Home" style={{ width: "24px", height: "24px" }} />
-          <p>Home</p>
-        </button>
-        <button onClick={() => navigate("/attendance")} style={{ background: "none", border: "none", cursor: "pointer" }}>
-          <img src="attendance-icon.png" alt="Attendance" style={{ width: "24px", height: "24px" }} />
-          <p>Attendance</p>
-        </button>
+        {/* Navigation Items can go here */}
       </div>
     </div>
   );

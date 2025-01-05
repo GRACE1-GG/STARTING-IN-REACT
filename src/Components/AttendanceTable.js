@@ -1,46 +1,41 @@
-// AttendanceTable.js
+// src/Components/AttendanceTable.js
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-`;
-
-const Th = styled.th`
-  padding: 10px;
-  border: 1px solid #ddd;
-  background-color: #f2f2f2;
-`;
-
-const Td = styled.td`
-  padding: 10px;
-  border: 1px solid #ddd;
-`;
-
-const AttendanceTable = ({ records }) => {
+const AttendanceTable = ({ attendanceData }) => {
   return (
-    <Table>
-      <thead>
-        <tr>
-          <Th>Name</Th>
-          <Th>Date</Th>
-          <Th>Clock In</Th>
-          <Th>Clock Out</Th>
-        </tr>
-      </thead>
-      <tbody>
-        {records.map((record, index) => (
-          <tr key={index}>
-            <Td>{record.name}</Td>
-            <Td>{record.date}</Td>
-            <Td>{record.clockIn}</Td>
-            <Td>{record.clockOut}</Td>
+    <div>
+      <h2>Attendance Table</h2>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
+        <thead>
+          <tr>
+            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Name</th>
+            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Date</th>
+            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Clock In</th>
+            <th style={{ border: '1px solid #ccc', padding: '8px' }}>Clock Out</th>
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {attendanceData.map((entry, index) => (
+            <tr key={index}>
+              <td style={{ border: '1px solid #ccc', padding: '8px' }}>{entry.name}</td>
+              <td style={{ border: '1px solid #ccc', padding: '8px' }}>{entry.date}</td>
+              <td style={{ border: '1px solid #ccc', padding: '8px' }}>{entry.clockIn}</td>
+              <td style={{ border: '1px solid #ccc', padding: '8px' }}>{entry.clockOut}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
+};
+
+AttendanceTable.propTypes = {
+  attendanceData: PropTypes.array.isRequired,
+};
+
+AttendanceTable.defaultProps = {
+  attendanceData: [],
 };
 
 export default AttendanceTable;
